@@ -7,7 +7,9 @@ const CartItem = ({ item, onDelete }) => {
   return (
     <li className="cartlist__item">
       <h4 className="cartlist__item__descriptor">{item}</h4>
-      <Button aria-label={`Delete item ${item}`} danger onClick={onDelete}>Delete</Button>
+      <Button aria-label={`Delete item ${item}`} danger onClick={onDelete}>
+        Remove
+      </Button>
     </li>
   );
 };

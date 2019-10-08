@@ -1,8 +1,6 @@
 import React from 'react';
 import { bool } from 'prop-types';
 
-import './styles.css';
-
 const Button = ({ children, danger, disabled, primary, ...props }) => {
   return (
     <button

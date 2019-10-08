@@ -3,8 +3,6 @@ import { bool, func } from 'prop-types';
 
 import Button from '../Button';
 
-import './styles.css';
-
 const Modal = ({ loading, onAccept, onCancel, visible }) => {
   const ref = useRef();
 
@@ -38,14 +36,20 @@ const Modal = ({ loading, onAccept, onCancel, visible }) => {
               value={value}
             />
             <div className="modal__backdrop__body__buttons">
-              <Button aria-label="Close modal" disabled={loading} onClick={onCancel}>Close</Button>
+              <Button
+                aria-label="Close modal"
+                disabled={loading}
+                onClick={onCancel}
+              >
+                Close
+              </Button>
               <Button
                 aria-label={`Add item ${value}`}
                 disabled={!value || loading}
                 onClick={handleAccept}
                 primary
               >
-                Add
+                Save
               </Button>
             </div>
           </div>
@@ -60,6 +64,6 @@ Modal.propTypes = {
   onAccept: func.isRequired,
   onCancel: func.isRequired,
   visible: bool
-}
+};
 
 export default Modal;

@@ -5,7 +5,6 @@ import CartList from './components/CartList';
 import Modal from './components/Modal';
 import useList from './hooks/useList';
 import useToggle from './hooks/useToggle';
-import './styles.css';
 
 const App = () => {
   const [modal, toggleModal] = useToggle();
