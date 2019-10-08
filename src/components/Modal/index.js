@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './styles.css';
 import Button from '../Button';
 
-const Modal = ({ children, onAccept, onCancel, visible }) => {
+const Modal = ({ loading, onAccept, onCancel, visible }) => {
   const ref = useRef();
 
   useEffect(() => {
@@ -36,10 +36,10 @@ const Modal = ({ children, onAccept, onCancel, visible }) => {
               value={value}
             />
             <div className="modal__backdrop__body__buttons">
-              <Button aria-label="Close modal" onClick={onCancel}>Close</Button>
+              <Button aria-label="Close modal" disabled={loading} onClick={onCancel}>Close</Button>
               <Button
                 aria-label={`Add item ${value}`}
-                disabled={!value}
+                disabled={!value || loading}
                 onClick={handleAccept}
                 primary
               >

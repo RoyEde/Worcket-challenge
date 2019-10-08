@@ -9,7 +9,7 @@ import './styles.css';
 
 const App = () => {
   const [modal, toggleModal] = useToggle();
-  const [items, addItem, deleteItem] = useList('items');
+  const [items, addItem, deleteItem, loading] = useList('items');
 
   const handleAddItem = item => {
     addItem(item);
@@ -19,9 +19,9 @@ const App = () => {
   return (
     <div className="app">
       <h1>Supermarket List</h1>
-      <Button onClick={toggleModal} primary>Add an item</Button>
-      <CartList items={items} onDelete={deleteItem} />
-      <Modal onAccept={handleAddItem} onCancel={toggleModal} visible={modal}>Add an item</Modal>
+      <Button disabled={loading} onClick={toggleModal} primary>Add an item</Button>
+      <CartList loading={loading} items={items} onDelete={deleteItem} />
+      <Modal loading={loading} onAccept={handleAddItem} onCancel={toggleModal} visible={modal}>Add an item</Modal>
     </div>
   );
 }
