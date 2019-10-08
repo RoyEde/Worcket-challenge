@@ -23,12 +23,13 @@ const Modal = ({ loading, onAccept, onCancel, visible }) => {
 
   return (
     visible && (
-      <div className="modal">
+      <div className="modal" data-test="modal">
         <div className="modal__backdrop">
           <div className="modal__backdrop__body">
             <h2>Add an item</h2>
             <input
               className="modal__backdrop__body__input"
+              data-test="add-input"
               onChange={handleChange}
               onKeyPress={handleKeyPress}
               ref={ref}
@@ -38,13 +39,15 @@ const Modal = ({ loading, onAccept, onCancel, visible }) => {
             <div className="modal__backdrop__body__buttons">
               <Button
                 aria-label="Close modal"
+                data-test="cancel-item-button"
                 disabled={loading}
                 onClick={onCancel}
-              >
+                >
                 Close
               </Button>
               <Button
                 aria-label={`Add item ${value}`}
+                data-test="save-item-button"
                 disabled={!value || loading}
                 onClick={handleAccept}
                 primary

@@ -6,7 +6,7 @@ import CartItem from './components/CartItem';
 const CartList = ({ items, loading, onDelete }) => {
   return (
     <div className="cartlist">
-      <h3 className="cartlist__count">
+      <h3 className="cartlist__count" data-test="count">
         {loading
           ? 'Loading...'
           : items.length === 0
