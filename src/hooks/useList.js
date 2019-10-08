@@ -6,12 +6,12 @@ const useList = key => {
   const [items, setItems] = useState([]);
   
   useEffect(() => {
-    const storedItems = localStorage.getItem('key');
+    const storedItems = localStorage.getItem(key);
     if (storedItems) setItems(JSON.parse(storedItems))
   }, []);
   
   useEffect(() => {
-    localStorage.setItem('key', JSON.stringify(items));
+    localStorage.setItem(key, JSON.stringify(items));
   }, [items]);
 
   const addItem = item => setItems([...items, { item, id: generateId() }]);

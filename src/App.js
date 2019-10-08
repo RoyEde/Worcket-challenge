@@ -9,7 +9,7 @@ import './styles.css';
 
 const App = () => {
   const [modal, toggleModal] = useToggle();
-  const [items, addItem, deleteItem] = useList();
+  const [items, addItem, deleteItem] = useList('items');
 
   const handleAddItem = item => {
     addItem(item);
