@@ -21,7 +21,7 @@ const CartItem = ({ loading, item, onDelete }) => {
 
 CartItem.propTypes = {
   item: string.isRequired,
-  loading: bool.isRequired,
+  loading: bool,
   onDelete: func.isRequired
 };
 
