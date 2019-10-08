@@ -4,9 +4,11 @@ exports[`snapshots match 1`] = `
 <div
   className="cartlist"
 >
-  <h2>
+  <h3
+    className="cartlist__count"
+  >
     List is empty!
-  </h2>
+  </h3>
   <ul />
 </div>
 `;
@@ -15,9 +17,11 @@ exports[`snapshots match 2`] = `
 <div
   className="cartlist"
 >
-  <h2>
+  <h3
+    className="cartlist__count"
+  >
     List is empty!
-  </h2>
+  </h3>
   <ul />
 </div>
 `;
@@ -26,9 +30,11 @@ exports[`snapshots match 3`] = `
 <div
   className="cartlist"
 >
-  <h2>
+  <h3
+    className="cartlist__count"
+  >
     List is empty!
-  </h2>
+  </h3>
   <ul />
 </div>
 `;
@@ -37,9 +43,11 @@ exports[`snapshots match 4`] = `
 <div
   className="cartlist"
 >
-  <h2>
+  <h3
+    className="cartlist__count"
+  >
     List is empty!
-  </h2>
+  </h3>
   <ul />
 </div>
 `;
@@ -48,9 +56,11 @@ exports[`snapshots match 5`] = `
 <div
   className="cartlist"
 >
-  <h2>
+  <h3
+    className="cartlist__count"
+  >
     List is empty!
-  </h2>
+  </h3>
   <ul />
 </div>
 `;

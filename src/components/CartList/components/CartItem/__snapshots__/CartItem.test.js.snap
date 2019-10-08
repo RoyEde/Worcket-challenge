@@ -4,11 +4,11 @@ exports[`snapshots match 1`] = `
 <li
   className="cartlist__item"
 >
-  <h4
+  <h3
     className="cartlist__item__descriptor"
   >
     test
-  </h4>
+  </h3>
   <button
     aria-label="Delete item test"
     className="button   button--danger"
@@ -23,11 +23,11 @@ exports[`snapshots match 2`] = `
 <li
   className="cartlist__item"
 >
-  <h4
+  <h3
     className="cartlist__item__descriptor"
   >
     test
-  </h4>
+  </h3>
   <button
     aria-label="Delete item test"
     className="button   button--danger"
