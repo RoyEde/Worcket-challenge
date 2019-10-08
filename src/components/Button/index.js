@@ -11,8 +11,7 @@ const Button = ({ children, danger, disabled, primary, ...props }) => {
         disabled ? 'button--disabled' : ''
       } ${
         danger ? 'button--danger' : ''
-      }
-      `}
+      }`}
       disabled={disabled}
     >
       {children}

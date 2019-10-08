@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots match 1`] = `
+<li
+  className="cartlist__item"
+>
+  <h4
+    className="cartlist__item__descriptor"
+  >
+    test
+  </h4>
+  <button
+    aria-label="Delete item test"
+    className="button   button--danger"
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</li>
+`;
+
+exports[`snapshots match 2`] = `
+<li
+  className="cartlist__item"
+>
+  <h4
+    className="cartlist__item__descriptor"
+  >
+    test
+  </h4>
+  <button
+    aria-label="Delete item test"
+    className="button   button--danger"
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</li>
+`;
