@@ -6,18 +6,17 @@ import CartItem from './components/CartItem';
 const CartList = ({ items, loading, onDelete }) => {
   return (
     <div className="cartlist">
-      <h2>
+      <h3 className="cartlist__count">
         {loading
           ? 'Loading...'
           : items.length === 0
           ? 'List is empty!'
           : `Items: ${items.length}`}
-      </h2>
+      </h3>
       <ul>
-        {!loading &&
-          items.map(({ item, id }) => (
-            <CartItem key={id} item={item} onDelete={() => onDelete(id)} />
-          ))}
+        {items.map(({ item, id }) => (
+          <CartItem key={id} item={item} loading={loading} onDelete={() => onDelete(id)} />
+        ))}
       </ul>
     </div>
   );

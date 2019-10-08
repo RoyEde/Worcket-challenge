@@ -1,13 +1,18 @@
 import React from 'react';
-import { func, string } from 'prop-types';
+import { bool, func, string } from 'prop-types';
 
 import Button from '../../../Button';
 
-const CartItem = ({ item, onDelete }) => {
+const CartItem = ({ loading, item, onDelete }) => {
   return (
     <li className="cartlist__item">
-      <h4 className="cartlist__item__descriptor">{item}</h4>
-      <Button aria-label={`Delete item ${item}`} danger onClick={onDelete}>
+      <h3 className="cartlist__item__descriptor">{item}</h3>
+      <Button
+        aria-label={`Delete item ${item}`}
+        danger
+        disabled={loading}
+        onClick={onDelete}
+      >
         Remove
       </Button>
     </li>
@@ -16,6 +21,7 @@ const CartItem = ({ item, onDelete }) => {
 
 CartItem.propTypes = {
   item: string.isRequired,
+  loading: bool.isRequired,
   onDelete: func.isRequired
 };
 

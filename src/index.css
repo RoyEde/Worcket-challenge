@@ -1,19 +1,19 @@
 :root {
-  --button--danger-background-color: #BB1F1F;
-  --button--danger-border-color: #CB1F1F;
-  --button--danger-text-color: #ffffff;
+  --title-color: black;
+  --count-color: #939393;
+  --button--danger-background-color: #BF1F1F;
+  --button--danger-border-color: #DB1F1F;
+  --button--danger-text-color: #FFFFFF;
   --button--danger--hover: #E02525;
-  --button--hover: #dddddd;
-  --button--disabled-background-color: #eeeeee;
-  --button--disabled-border-color: #dddddd;
+  --button--hover: #DDDDDD;
+  --button--disabled-background-color: #EEEEEE;
+  --button--disabled-border-color: #DDDDDD;
   --button--disabled-text-color: #000000;
-  --button--primary-background-color: #2081C3;
-  --button--primary-border-color: #348CC8;
-  --button--primary-text-color: #ffffff;
-  --button--primary-background-color: #2081C3;
-  --button--primary-border-color: #348CC8;
-  --button--primary-text-color: #ffffff;
-  --button--primary--hover: #349CC8;
+  --button--primary-background-color: #009EFF;
+  --button--primary-border-color: #007DCE;
+  --button--primary-text-color: #FFFFFF;
+  --button--primary--hover: #35B2FF;
+  --border-radius: 5px;
 }
 
 * {
@@ -22,19 +22,16 @@
 }
 
 body {
+  background-color: #F5F5F5;
   display: flex;
   min-height: 100vh;
   min-width: 100vw;
   margin: 0;
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  font-family: 'Merriweather', sans-serif;
 }
 
 .app {
@@ -43,7 +40,20 @@ h1 {
   flex: 1;
   flex-direction: column;
   max-width: 768px;
+  padding: 0 0.5rem;
   text-align: center;
+}
+
+.app__title {
+  margin-bottom: 0;
+  margin-top: 4rem;
+}
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  width: 100%;
 }
 
 .root {
@@ -54,21 +64,22 @@ h1 {
 
 .button {
   appearance: none;
-  background-color: #fff;
-  border: 2px solid #999999;
-  border-radius: 5px;
+  background-color: #FFF;
+  border: 1px solid #999999;
+  border-radius: var(--border-radius);
   cursor: pointer;
   font-family: inherit;
   font-size: 1.2rem;
   font-weight: 600;
-  min-width: 40%;
-  padding: 0.5rem 1.5rem;
-  transition: background-color 0.4s, border-color 0.4s;
+  padding: 0.7rem 3rem;
+  transition: background-color 0.4s, border-color 0.4s, transform 0.4s;
+  transform-origin: center center;
 }
 
 .button:not(.button--disabled):hover,
 .button:not(.button--disabled):focus {
   background-color: var(--button--hover);
+  transform: scale(1.01);
 }
 
 .button--primary {
@@ -77,12 +88,6 @@ h1 {
   color: var(--button--primary-text-color);
 }
 
-.button--disabled {
-  background-color: var(--button--disabled-background-color);
-  border-color: var(--button--disabled-border-color);
-  color: var(--button--disabled-text-color);
-  cursor: auto;
-}
 
 .button--danger {
   background-color: var(--button--danger-background-color);
@@ -93,7 +98,6 @@ h1 {
 .button--primary:not(.button--disabled):hover,
 .button--primary:not(.button--disabled):focus {
   background-color: var(--button--primary--hover);
-  border-color: var(--button--primary--hover);
 }
 
 .button--danger:not(.button--disabled):hover,
@@ -102,23 +106,35 @@ h1 {
   border-color: var(--button--danger--hover);
 }
 
+.button--disabled {
+  background-color: var(--button--disabled-background-color);
+  border-color: var(--button--disabled-border-color);
+  color: var(--button--disabled-text-color);
+  cursor: auto;
+}
+
 .cartlist {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  margin-top: 1rem;
-  max-width: 768px;
-  width: 100%;
+}
+
+.cartlist__count {
+  color: var(--count-color);
+  margin: 0;
 }
 
 .cartlist__item {
   align-items: center;
-  background-color: #eeeeee;
+  background-color: #FFF;
+  border-radius: var(--border-radius);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
   list-style-type: none;
-  margin: 0;
+  margin: 1rem 0;
   padding: 0.5rem 1rem;
 }
 
@@ -142,8 +158,9 @@ h1 {
 }
 
 .modal__backdrop__body {
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: #FFF;
+  border-radius: var(--border-radius);
+  box-shadow: 1px rgba(0, 0, 0, 0.4);
   flex: 1;
   min-height: 12rem;
   max-width: 600px;
@@ -152,8 +169,8 @@ h1 {
 
 .modal__backdrop__body__input {
   appearance: none;
-  border: 2px solid #dddddd;
-  border-radius: 5px;
+  border: 2px solid #DDDDDD;
+  border-radius: var(--border-radius);
   font-family: inherit;
   font-size: 1rem;
   padding: 0.8rem 0.5rem;

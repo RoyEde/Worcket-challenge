@@ -17,9 +17,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Supermarket List</h1>
-      <Button disabled={loading} onClick={toggleModal} primary>Add an item</Button>
-      <CartList loading={loading} items={items} onDelete={deleteItem} />
+      <h1 className="app__title">Supermarket List</h1>
+      <div className="app__container">
+        <CartList loading={loading} items={items} onDelete={deleteItem} />
+        <Button disabled={loading} onClick={toggleModal} primary>Add an item</Button>
+      </div>
       <Modal loading={loading} onAccept={handleAddItem} onCancel={toggleModal} visible={modal}>Add an item</Modal>
     </div>
   );

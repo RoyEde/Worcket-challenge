@@ -10,23 +10,24 @@ import useToggle from './useToggle';
 const useList = key => {
   const [loading, toggleLoading] = useToggle(false);
   const [items, setItems] = useState([]);
-  
+
   useEffect(() => {
     toggleLoading();
     get(key).then(setItems);
   }, []);
-  
+
   useEffect(() => {
-    put(key, items).then(toggleLoading);
+    toggleLoading();
   }, [items]);
 
   const addItem = item => {
     toggleLoading();
-    setItems([...items, { item, id: generateId() }]);
+    put(key, [...items, { item, id: generateId() }]).then(setItems);
   };
+
   const deleteItem = id => {
     toggleLoading();
-    setItems(items.filter(({ id: itemId }) => itemId !== id));
+    put(key, items.filter(({ id: itemId }) => itemId !== id)).then(setItems);
   };
 
   return [items, addItem, deleteItem, loading];
