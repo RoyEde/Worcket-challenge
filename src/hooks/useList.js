@@ -1,7 +1,10 @@
+// These dependencies don't need to be updated.
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 
 import { generateId } from '../utils/generateId';
 import { get, put } from '../utils/apiMock';
+
 import useToggle from './useToggle';
 
 const useList = key => {

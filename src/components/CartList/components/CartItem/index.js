@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { func, string } from 'prop-types';
 
 import Button from '../../../Button';
 
@@ -13,7 +13,8 @@ const CartItem = ({ item, onDelete }) => {
 };
 
 CartItem.propTypes = {
-  
+  item: string.isRequired,
+  onDelete: func.isRequired
 };
 
 export default CartItem;

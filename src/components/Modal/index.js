@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { bool, func } from 'prop-types';
+
+import Button from '../Button';
 
 import './styles.css';
-import Button from '../Button';
 
 const Modal = ({ loading, onAccept, onCancel, visible }) => {
   const ref = useRef();
@@ -52,5 +54,12 @@ const Modal = ({ loading, onAccept, onCancel, visible }) => {
     )
   );
 };
+
+Modal.propTypes = {
+  loading: bool,
+  onAccept: func.isRequired,
+  onCancel: func.isRequired,
+  visible: bool
+}
 
 export default Modal;

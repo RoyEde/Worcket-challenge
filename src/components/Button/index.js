@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool } from 'prop-types';
 
 import './styles.css';
 
@@ -22,6 +22,10 @@ const Button = ({ children, danger, disabled, primary, ...props }) => {
   );
 };
 
-Button.propTypes = {};
+Button.propTypes = {
+  danger: bool,
+  disabled: bool,
+  primary: bool
+};
 
 export default Button;
